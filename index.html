@@ -6,18 +6,136 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/bootstrap.css">
     <link rel="stylesheet" href="./css/main.css">
-    <title>Document</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <title>4-Oy imtihon</title>
 </head>
-<body>
+<body class="bg-success">
     
-    <h1 class="visually-hidden"></h1>
-    
-    <header>
+    <header class="header">
         <div class="container">
-            
+            <div class="row pt-4 header-top ms-3">
+                <div class="col">
+                    <a href="">
+                        <img class="mb-2 header-image" src="./image/book-shelter.svg" alt="book-shelter images" width="226" height="44">
+                    </a>
+                </div>
+                
+                <div class="col-md-8 header-middle">
+                    <form id="header__form" class="header-form">
+                        <div class="mb-3">
+                            <input type="text" id="disabledTextInput" class="form-control" required autocomplete="off" placeholder="Search books">
+                        </div>
+                    </form>
+                </div>
+                
+                <div class="col">
+                    <a href="">
+                        <img class="mb-1" src="./image/sunny.svg" alt="Sunny images" width="23" height="23">
+                    </a>
+                </div>
+            </div>
         </div>
     </header>
     
+    
+    <main>
+        <section class="hero">
+            <div class="container hero-container ">
+                <div class="hero-info d-flex  justify-content-around  alert alert-white" role="alert">
+                    <span class="ms-5  text-center d-inline-block text-black">
+                        Internet is not working
+                    </span>
+                    <a class="hero-link ms-5 d-flex align-items-center " href="">
+                        <img class="hero-image" src="./image/kalendar.svg " alt="">
+                        <h5 class="hero-heading m-0">Order by newest</h5>
+                    </a>
+                </div>
+            </div>
+        </section>
+        
+        
+        <section class="bookmarks">
+            <div class="container bookmarks-container">
+                <div class="row">
+                    <div class="col-md-3 bookmarks-left">   
+                        
+                        <h3 class="bookmarks-left-heading">Bookmarks</h3>
+                        <p class="bookmarks-left-text">
+                            If you don't like to read, you haven't found the right book
+                        </p>
+                        
+                        <ul class="d-flex flex-wrap bookmarks-left-list mb-3">
+                            
+                        </ul>
+                        
+                    </div>
+                    
+                    <div class="col bookmarks-rigt d-flex flex-wrap pt-4">
+                      
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    
+    
+    <template id="template1">
+        <li class="mb-3">
+            <li class="bookmarks-left-item">
+                <h3 class="bookmarks-left-title">Python</h3>
+                <p class="bookmarks-left-text2">David M. Beazley</p>
+            </li>
+            
+            <li class="bookmarks-left-item">
+                <ol class="d-flex align-items-center bookmarks-left-list2">
+                    <li class="bookmarks-left-item2">
+                        <a href="">
+                            <img class="" src="./image/book-open.svg" alt="bookmark-image" width="24" height="24">
+                        </a>
+                    </li>
+                    <li class="bookmarks-left-item2">
+                        <a href="">
+                            <img class="" src="./image/delete.svg" alt="bookmark-delte" width="24" height="24">
+                        </a>
+                    </li>
+                </ol>
+            </li>
+        </li>
+    </template>
+    
+    <template id="template2">
+        <div class="bookmarks-rigt-card ms-lg-4 mb-4">
+            <img src="./image/Rectangle.png" class="card-img-top bookmarks-rigt-image" alt="bookmark-image" width="201" height="202">
+            <div class="card-body">
+                <h5 class="card-title bookmarks-rigt-title">Python</h5>
+                <p class="card-text m-0 bookmarks-rigt-text">David M. Beazley</p>
+                <span class="bookmarks-rigt-year d-inline-block">2009</span>
+            </div>
+            
+            <div class="pb-3 flex-wrap bookmarks-rigt-btngroup">
+                <button type="button" class="btn   bookmarks-rigt-btn1 modal-btn" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                    Bookmark
+                </button>
+                <button class="btn bookmarks-rigt-btn2" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"> More info</button>
+                
+                <a class="btn  btn-sm  bookmarks-rigt-link mb-2" href="">
+                    Read
+                </a>
+            </div>
+        </div>
+    </template>
+    
+    <!-- Modal info -->
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+        <div class="offcanvas-header">
+            <h5 id="offcanvasRightLabel">Offcanvas right</h5>
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            
+        </div>
+    </div>
     
     <script src="./js/bootstrap.js"></script>
     <script src="./js/main.js"></script>
