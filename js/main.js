@@ -1,6 +1,6 @@
-
 // HTML element
-let elBookShelterForm = document.querySelector("#header__form");
+let elBookmarkForm = document.querySelector("#bookmark__form");
+let elBookmarkInput = document.querySelector(".bookmark__input");
 let elToggleLink = document.querySelector("#header__link");
 let elAlertResult = document.querySelector("#hero__result");
 let elOrderNewest = document.querySelector("#hero__order-link");
@@ -11,6 +11,24 @@ let elBookmarksWrapperTemplate = document.querySelector("#template2").content;
 
 // console.log(elBookmarksWrapperTemplate);
 
+// let findMovies = function (title) {
+
+//     let filterBookmark = filter( item => {
+
+//         return item.volumeInfo.title.match(title) && item.volumeInfo.publisher
+//     })
+
+//     return filterBookmark
+
+// }
+
+// elBookmarkForm.addEventListener("input", (event) => {
+//     event.preventDefault()
+    
+//     let searchInput = elBookmarkInput.value.trim();
+//     console.log(searchInput);
+//     // renderBookmarks(searchInput, elBookmarkWrapper);
+// })
 
 
 
@@ -20,26 +38,25 @@ function renderBookmarks(array, node) {
     let bookmarkFragment = document.createDocumentFragment();
     
     array.forEach( item => {
-
+        
         let bookmarkTemplate = elBookmarksWrapperTemplate.cloneNode(true);
-
+        
         bookmarkTemplate.querySelector(".card-img-top").src = item.volumeInfo.imageLinks.smallThumbnail
         bookmarkTemplate.querySelector(".card-title").textContent = item.volumeInfo.title;
         bookmarkTemplate.querySelector(".card-info").textContent = item.volumeInfo.publisher;
         bookmarkTemplate.querySelector(".card-year").textContent = item.volumeInfo.publishedDate;
         bookmarkTemplate.querySelector(".bookmark-btn").dataset.bookmarkId = item.id
-        console.log(bookmarkTemplate);
-        // bookmarkTemplate.querySelector(".modal-btn").href = item.
+        bookmarkTemplate.querySelector(".modal-btn").dataset.modalId = item.id
         // bookmarkTemplate.querySelector(".read-btn").href = item.
-    
+        
         
         bookmarkFragment.appendChild(bookmarkTemplate);
     });
     
-   node.appendChild(bookmarkFragment)
-
+    node.appendChild(bookmarkFragment)
+    
     // let lenghtAlert = array.lenght
-
+    
 }
 
 
@@ -48,30 +65,39 @@ fetch("https://www.googleapis.com/books/v1/volumes?q=${bookmark}")
 .then(data => renderBookmarks(data.items, elBookmarkWrapper))
 
 
+elBookmarkWrapper.addEventListener("click", function (event) {
+    let getting = event.target.dataset.bookmarkId ;
+     
+    if (getting) {
+        
+        let 
+    }
+})
 
-// function renderLeftBookmark(array, wrapper) {
+
+
+function renderBookmarkList(array, wrapper) {
     
-//     wrapper.innerHTML = null;
-//     let elFragment = document.createDocumentFragment();
+    wrapper.innerHTML = null;
 
-//     array.forEach(item => {
+    let elFragment = document.createDocumentFragment();
+
+    array.forEach(function (item) {
         
-//         let templateBookmark = elBookmarksTemplate.cloneNode(true);
+        let templateBookmark = elBookmarksTemplate.cloneNode(true);
         
-//         templateBookmark.querySelector(".bookmarks-left-title").textContent = item.volumeInfo.title;
-//         templateBookmark.querySelector(".bookmarks-left-text2").textContent = item.volumeInfo.publisher;
-//         templateBookmark.querySelector(".bookmarks-left-link1").dataset.btnId = item.id;
-//         console.log(templateBookmark);
-//         // templateBookmark.querySelector(".bookmarks-left-link2").dataset.MovieId = item.movie_youtubeLink;
+        templateBookmark.querySelector(".bookmark-title").textContent = item.volumeInfo.title;;
+        templateBookmark.querySelector(".bookmark-text").textContent = item.volumeInfo.publisher;
+        templateBookmark.querySelector(".bookmarks-link").src = item.image
+        templateBookmark.querySelector(".delete-link").dataset.MovieId = item.movie_youtubeLink;
         
-//         elFragment.appendChild(templateBookmark);
-//     });
-// }
+        elFragment.appendChild(templateBookmark);
+    })
 
-// renderLeftBookmark()
+    wrapper.appendChild(elFragment)
+
+}
 
 
-// elBookmarkWrapper.addEventListener("click", function (event) {
-//     let modalMoreInfoBtn = event.target.
-// })
+
 
