@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="./css/style.css">
     <title>4-Oy imtihon</title>
 </head>
-<body class="bg-success">
+<body class="">
     
     <header class="header">
         <div class="container">
@@ -29,7 +29,7 @@
                 </div>
                 
                 <div class="col">
-                    <a href="">
+                    <a id="header__link" class="" href="">
                         <img class="mb-1" src="./image/sunny.svg" alt="Sunny images" width="23" height="23">
                     </a>
                 </div>
@@ -42,11 +42,11 @@
         <section class="hero">
             <div class="container hero-container ">
                 <div class="hero-info d-flex  justify-content-around  alert alert-white" role="alert">
-                    <span class="ms-5  text-center d-inline-block text-black">
+                    <span id="hero__result" class="ms-5  text-center d-inline-block text-black">
                         Internet is not working
                     </span>
-                    <a class="hero-link ms-5 d-flex align-items-center " href="">
-                        <img class="hero-image" src="./image/kalendar.svg " alt="">
+                    <a id="hero__order-link" class="hero-link ms-5 d-flex align-items-center " href="">
+                        <img class="hero-image" src="./image/kalendar.svg " alt="kalendar-images" width="24" height="24">
                         <h5 class="hero-heading m-0">Order by newest</h5>
                     </a>
                 </div>
@@ -64,14 +64,14 @@
                             If you don't like to read, you haven't found the right book
                         </p>
                         
-                        <ul class="d-flex flex-wrap bookmarks-left-list mb-3">
+                        <ul id="bookmarks__list" class="d-flex flex-wrap bookmarks-left-list mb-3">
                             
                         </ul>
                         
                     </div>
                     
-                    <div class="col bookmarks-rigt d-flex flex-wrap pt-4">
-                      
+                    <div class="col bookmarks-rigt d-flex flex-wrap pt-4 bookmarks__wrapper">
+                        
                     </div>
                 </div>
             </div>
@@ -90,12 +90,12 @@
             <li class="bookmarks-left-item">
                 <ol class="d-flex align-items-center bookmarks-left-list2">
                     <li class="bookmarks-left-item2">
-                        <a href="">
+                        <a class="bookmarks-left-link1" href="">
                             <img class="" src="./image/book-open.svg" alt="bookmark-image" width="24" height="24">
                         </a>
                     </li>
                     <li class="bookmarks-left-item2">
-                        <a href="">
+                        <a class="bookmarks-left-link2" href="">
                             <img class="" src="./image/delete.svg" alt="bookmark-delte" width="24" height="24">
                         </a>
                     </li>
@@ -108,18 +108,18 @@
         <div class="bookmarks-rigt-card ms-lg-4 mb-4">
             <img src="./image/Rectangle.png" class="card-img-top bookmarks-rigt-image" alt="bookmark-image" width="201" height="202">
             <div class="card-body">
-                <h5 class="card-title bookmarks-rigt-title">Python</h5>
-                <p class="card-text m-0 bookmarks-rigt-text">David M. Beazley</p>
-                <span class="bookmarks-rigt-year d-inline-block">2009</span>
+                <h5 class="card-title bookmarks-rigt-title card-title">Python</h5>
+                <p class="card-text m-0 bookmarks-rigt-text card-info">David M. Beazley</p>
+                <span class="bookmarks-rigt-year d-inline-block card-year">2009</span>
             </div>
             
             <div class="pb-3 flex-wrap bookmarks-rigt-btngroup">
-                <button type="button" class="btn   bookmarks-rigt-btn1 modal-btn" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                <button type="button" class="btn   bookmarks-rigt-btn1 bookmark-btn" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
                     Bookmark
                 </button>
-                <button class="btn bookmarks-rigt-btn2" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"> More info</button>
+                <button class="btn bookmarks-rigt-btn2 modal-btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"> More info</button>
                 
-                <a class="btn  btn-sm  bookmarks-rigt-link mb-2" href="">
+                <a class="btn  btn-sm  bookmarks-rigt-link mb-2 read-btn" href="">
                     Read
                 </a>
             </div>
@@ -128,12 +128,29 @@
     
     <!-- Modal info -->
     <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
-        <div class="offcanvas-header">
-            <h5 id="offcanvasRightLabel">Offcanvas right</h5>
+        <div class="offcanvas-header mb-5">
+            <h5 class="modal-title" id="offcanvasRightLabel">Python</h5>
             <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
-        <div class="offcanvas-body">
-            
+        
+        <div class="mb-5 align-items-center ms-5">
+            <img class="modal-image" src="./image/book-shelter.svg" alt="">
+        </div>
+        <div class="offcanvas-body modal-info mb-3">
+            <p class="mb-5 ms-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus fuga dolore aut reiciendis nostrum numquam at atque sint ipsum, necessitatibus, iste vel animi doloremque? Consequatur optio sapiente, nihil, officiis debitis sed quisquam quia eum recusandae quod veritatis veniam eius sit reprehenderit expedita facere accusamus dicta repellendus vitae adipisci earum nostrum, enim tenetur! Iste aspernatur accusamus dolorum iusto, maiores placeat quos, vel atque, consequatur ratione exercitationem dolorem voluptates est soluta eaque odit earum sit totam. Illo animi laborum fugiat iste id laboriosam aut suscipit. Esse accusantium eligendi maxime enim placeat dignissimos sit debitis adipisci recusandae, labore expedita neque beatae. Natus, ab!!</p>
+            <div class="d-flex flex-column ms-4">
+                <span class="mb-2">salom</span>
+                <span class="mb-2">salom</span>
+                <span class="mb-2">salom</span>
+                <span class="mb-2">salom</span>
+                <span class="mb-2">salom</span>
+            </div>
+        </div>
+        
+        
+        
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary bg-danger" data-bs-dismiss="offcanvas">Close</button>
         </div>
     </div>
     

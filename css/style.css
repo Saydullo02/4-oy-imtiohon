@@ -21,6 +21,10 @@
     padding: 8px 13px;
 }
 
+.header-form{
+   border-radius: 50px;
+}
+
 .hero-image{
     box-sizing: content-box;
     width: 24px;
@@ -74,7 +78,7 @@
 .bookmarks-left-item{
     padding-top: 15px;
     padding-bottom: 15px;
-    padding-left: 10px; 
+    padding-left: 15px; 
     margin-right: 20px;
 }
 
@@ -82,7 +86,6 @@
     padding-top: 15px;
     padding-bottom: 15px;
     padding-left: 10px; 
-    margin-right: 20px;
 }
 
 
